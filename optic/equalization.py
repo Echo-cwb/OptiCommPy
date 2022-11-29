@@ -1,7 +1,7 @@
 """Functions for adaptive and static equalization."""
 import numpy as np
 import scipy.constants as const
-from commpy.modulation import QAMModem
+from commpy.modulation import QAMModem,PSKModem
 from numba import njit
 from numpy.fft import fft, fftfreq, ifft
 from tqdm.notebook import tqdm
@@ -42,7 +42,7 @@ def mimoAdaptEqualizer(x, dx=[], paramEq=[]):
     alg        = getattr(paramEq, 'alg', ['nlms'])
     M          = getattr(paramEq, 'M', 4)
     prgsBar    = getattr(paramEq, "prgsBar", True)
-    mod        = getattr(paramEq, 'mod', QAMModem(m=4))
+    mod        = getattr(paramEq, 'mod', PSKModem(m=4))
 
     # We want all the signal sequences to be disposed in columns:
     if not len(dx):
