@@ -23,7 +23,7 @@ def edc(Ei, L, D, Fc, Fs):
     """
     return linFiberCh(Ei, L, 0, -D, Fc, Fs)
 
-def mimoAdaptEqualizer(x, dx=[], paramEq=[]):
+def mimoAdaptEqualizer(x, dx=[], paramEq=[], mod):
     """
     N-by-N MIMO adaptive equalizer
     
@@ -42,7 +42,7 @@ def mimoAdaptEqualizer(x, dx=[], paramEq=[]):
     alg        = getattr(paramEq, 'alg', ['nlms'])
     M          = getattr(paramEq, 'M', 4)
     prgsBar    = getattr(paramEq, "prgsBar", True)
-    mod        = getattr(paramEq, 'mod', PSKModem(m=4))
+    
 
     # We want all the signal sequences to be disposed in columns:
     if not len(dx):
