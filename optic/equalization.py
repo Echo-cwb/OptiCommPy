@@ -42,7 +42,7 @@ def mimoAdaptEqualizer(x, dx=[], paramEq=[]):
     alg        = getattr(paramEq, 'alg', ['nlms'])
     M          = getattr(paramEq, 'M', 4)
     prgsBar    = getattr(paramEq, "prgsBar", True)
-    mod        = getattr(paramEq, 'mod', QAMModem(m=M))
+    mod        = getattr(paramEq, 'mod', QAMModem(m=4))
 
     # We want all the signal sequences to be disposed in columns:
     if not len(dx):
