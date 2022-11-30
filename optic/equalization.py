@@ -23,7 +23,7 @@ def edc(Ei, L, D, Fc, Fs):
     """
     return linFiberCh(Ei, L, 0, -D, Fc, Fs)
 
-def mimoAdaptEqualizer(x, dx=[], paramEq=[], mod):
+def mimoAdaptEqualizer(x, dx=[], paramEq=[], mod=PSKModem(m=4)):
     """
     N-by-N MIMO adaptive equalizer
     
