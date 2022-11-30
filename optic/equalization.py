@@ -23,7 +23,7 @@ def edc(Ei, L, D, Fc, Fs):
     """
     return linFiberCh(Ei, L, 0, -D, Fc, Fs)
 
-def mimoAdaptEqualizer(x, dx=[], paramEq=[], mod=PSKModem(m=4)):
+def mimoAdaptEqualizer(x, dx=[], paramEq=[]):
     """
     N-by-N MIMO adaptive equalizer
     
@@ -68,6 +68,7 @@ def mimoAdaptEqualizer(x, dx=[], paramEq=[], mod=PSKModem(m=4)):
 
     # Defining training parameters:
     #mod = QAMModem(m=M) # commpy QAM constellation modem object
+    mod=PSKModem(m=M)
     constSymb = mod.constellation/np.sqrt(mod.Es) # complex-valued constellation symbols
 
     totalNumSymb = int(np.fix((len(x)-nTaps)/SpS+1))
