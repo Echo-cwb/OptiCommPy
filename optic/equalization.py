@@ -67,8 +67,8 @@ def mimoAdaptEqualizer(x, dx=[], paramEq=[]):
     x = np.concatenate((zeroPad, x, zeroPad)) # pad start and end of the signal with zeros
 
     # Defining training parameters:
-    #mod = QAMModem(m=M) # commpy QAM constellation modem object
-    mod=PSKModem(m=M)
+    mod = QAMModem(m=M) # commpy QAM constellation modem object
+    #mod=PSKModem(m=M)
     constSymb = mod.constellation/np.sqrt(mod.Es) # complex-valued constellation symbols
 
     totalNumSymb = int(np.fix((len(x)-nTaps)/SpS+1))
